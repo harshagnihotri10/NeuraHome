@@ -8,7 +8,7 @@ cd ../daemons/build
 cd ../../server
 node src/server.js &
 
-# Start web interface
+# Start web interfac
 cd ../web
 npm start
 
