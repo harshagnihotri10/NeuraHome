@@ -3,7 +3,7 @@ An intelligent home automation system that manages smart devices using IoT techn
 
 ---
 
-![Build Status](https://travis-ci.com/harshagnihotri10/NeuraHome.svg?branch=main) ![Coverage](https://codecov.io/gh/harshagnihotri10/NeuraHome/branch/main/graph/badge.svg)
+![Coverage](https://codecov.io/gh/harshagnihotri10/NeuraHome/branch/main/graph/badge.svg)
 
 ---
 
@@ -12,10 +12,8 @@ An intelligent home automation system that manages smart devices using IoT techn
 - [Tech Stack](#tech-stack)
 - [Installation](#installation)
 - [Usage](#usage)
-- [API Reference](#api-reference)
 - [Code Structure](#code-structure)
 - [Contributing](#contributing)
-- [License](#license)
 
 ---
 
@@ -81,51 +79,29 @@ npm start
 
 ---
 
-## API Reference
 
-### Authentication
-#### POST /api/auth/login
-- **Description**: Logs a user in and returns a JWT.
-- **Request Body**:
-  ```json
-  {
-    "email": "user@example.com",
-    "password": "password123"
-  }
-  ```
-- **Response**:
-  ```json
-  {
-    "token": "your.jwt.token"
-  }
-  ```
-
-### Get Devices
-#### GET /api/devices
-- **Description**: Retrieves a list of all connected devices.
-
----
 
 ## Code Structure
 
-```
-.
-├── scripts
-│   ├── deploy.sh
-│   └── install.sh
-├── server
-│   ├── src
-│   │   └── server.js
-│   ├── tests
-│   │   └── server.test.js
-├── web
-│   ├── package.json
-│   ├── src
-│   │   └── App.js
-├── Readme.md
-├── daemon_Process.cpp
-└── daemon_tests.cpp
-```
+### Backend (`server/`)
+- **src/**
+  - `server.js`: The main backend file responsible for running the server and handling incoming requests.
+- **tests/**
+  - `server.test.js`: Contains test cases for validating the backend functionality.
+
+### Frontend (`web/`)
+- **src/**
+  - `App.js`: The main entry point for the React application, handling routing and rendering of components.
+- **package.json**: Contains frontend dependencies and project configurations for the React app.
+
+### Daemon
+- `daemon_Process.cpp`: Daemon process that handles the Makefile dependency parsing and optimization.
+- `daemon_tests.cpp`: Unit tests to validate the daemon process functionality.
+
+### Scripts (`scripts/`)
+- `deploy.sh`: Script for deploying the application to cloud platforms.
+- `install.sh`: Script for installing necessary dependencies for the project.
+
 
 ---
 
@@ -136,8 +112,8 @@ npm start
 
 ---
 
-## Contributing
-We welcome contributions! Please follow the code of conduct and ensure all tests pass before submitting a pull request.
+## Contributins
+Contributions are welcome! Please follow the code of conduct and ensure all tests pass before submitting a pull request.
 
 ---
 
