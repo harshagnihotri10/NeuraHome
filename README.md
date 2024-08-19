@@ -1,119 +1,136 @@
-# NeuraHome
-An intelligent home automation system that manages smart devices using IoT technologies and cloud computing. Built to improve home security, energy efficiency, and overall comfort, NeuraHome offers real-time control and automated scheduling for smart homes.
+
+# **NeuraHome**
+An intelligent home automation system that manages smart devices using a blend of IoT technologies and cloud computing. Built to enhance home security, energy efficiency, and comfort by seamlessly integrating and controlling smart devices in a home environment.
 
 ---
 
-![Coverage](https://codecov.io/gh/harshagnihotri10/NeuraHome/branch/main/graph/badge.svg)
-
----
-
-## Table of Contents
+## **Table of Contents**
 - [Features](#features)
 - [Tech Stack](#tech-stack)
 - [Installation](#installation)
 - [Usage](#usage)
+- [API Reference](#api-reference)
 - [Code Structure](#code-structure)
 - [Contributing](#contributing)
 
 ---
 
-## Features
-- Real-time device control via a web interface
-- Secure cloud-based data storage and retrieval
-- Integration with Google Home and Alexa
-- Automated scheduling and voice-activated commands
-- Energy consumption monitoring
+## **Features**
+- Real-time smart device control and monitoring
+- Secure cloud-based communication between devices
+- Integration with Google Home and Alexa for voice control
+- Automated scheduling for device operations
+- Supports multiple user roles and customizable settings
 
 ---
 
-## Tech Stack
-- **Backend**: C++, Rust, Node.js
-- **Frontend**: React.js, HTML, CSS
-- **Cloud**: AWS (EC2, Lambda, S3)
-- **Database**: PostgreSQL
-- **DevOps**: Docker, Kubernetes, Travis CI
+## **Tech Stack**
+- **Backend**: C++, Node.js (Express.js)
+- **Frontend**: React.js
+- **Cloud**: AWS
+- **Database**: MongoDB
+- **Automation Scripts**: Shell scripting
+- **DevOps**: Docker, Kubernetes, GitHub Actions
 
 ---
 
-## Installation
+## **Installation**
 
-### Clone the Repository
+### **Clone the Repository**
 ```bash
 git clone https://github.com/harshagnihotri10/NeuraHome.git
 ```
 
-### Backend Setup
-Navigate to the `server` directory:
-```bash
-cd server
-```
-Install dependencies:
-```bash
-npm install
-```
-Start the server:
-```bash
-npm start
-```
+### **Backend Setup (Server)**
+1. Navigate to the `server` directory:
+   ```bash
+   cd server/src
+   ```
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Start the server:
+   ```bash
+   npm start
+   ```
 
-### Frontend Setup
-Navigate to the `web` directory:
-```bash
-cd web
-```
-Install dependencies:
-```bash
-npm install
-```
-Start the frontend:
-```bash
-npm start
-```
+### **Frontend Setup (Web)**
+1. Navigate to the `web` directory:
+   ```bash
+   cd web
+   ```
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Start the frontend:
+   ```bash
+   npm start
+   ```
 
----
-
-## Usage
-1. Register a user and log in via the web interface.
-2. Connect smart home devices to the NeuraHome system.
-3. Use the web interface or voice commands to control devices and automate schedules.
-
----
-
-
-
-## Code Structure
-
-### Backend (`server/`)
-- **src/**
-  - `server.js`: The main backend file responsible for running the server and handling incoming requests.
-- **tests/**
-  - `server.test.js`: Contains test cases for validating the backend functionality.
-
-### Frontend (`web/`)
-- **src/**
-  - `App.js`: The main entry point for the React application, handling routing and rendering of components.
-- **package.json**: Contains frontend dependencies and project configurations for the React app.
-
-### Daemon
-- `daemon_Process.cpp`: Daemon process that handles the Makefile dependency parsing and optimization.
-- `daemon_tests.cpp`: Unit tests to validate the daemon process functionality.
-
-### Scripts (`scripts/`)
-- `deploy.sh`: Script for deploying the application to cloud platforms.
-- `install.sh`: Script for installing necessary dependencies for the project.
-
+### **Daemon Process**
+1. Compile the C++ daemon process:
+   ```bash
+   g++ daemon_Process.cpp -o daemonProcess
+   ./daemonProcess
+   ```
 
 ---
 
-## Best Practices
-- **Code Quality**: ESLint and Prettier for consistent code style.
-- **Testing**: Unit and integration tests using Jest.
-- **Security**: JWT authentication and role-based access control for secure access.
+## **Usage**
+1. Register a new account and log in through the web interface.
+2. Add and connect your smart devices.
+3. Control the devices via the web app or mobile app.
+4. Automate device operations using the scheduling feature or voice commands.
 
 ---
 
-## Contributins
-Contributions are welcome! Please follow the code of conduct and ensure all tests pass before submitting a pull request.
+## **API Reference**
+
+### **Device Control**
+- **POST** `/api/device/control`
+  - **Description**: Sends a control signal to the connected smart device.
+  - **Request Body**:
+    ```json
+    {
+      "deviceId": "device_123",
+      "action": "turn_on"
+    }
+    ```
+
+### **Device Status**
+- **GET** `/api/device/status`
+  - **Description**: Retrieves the current status of the connected devices.
 
 ---
 
+## **Code Structure**
+- **`scripts/`**: Shell scripts for automating installation and deployment
+  - **`deploy.sh`**: Automates the deployment process on AWS infrastructure
+  - **`install.sh`**: Sets up required dependencies and environments
+- **`server/`**: Node.js backend service
+  - **`src/`**: Main backend logic
+    - **`server.js`**: Express.js server setup
+  - **`tests/`**: Unit tests for backend logic
+    - **`server.test.js`**: Test file for backend functionalities
+- **`web/`**: React.js frontend application
+  - **`package.json`**: Project dependencies and scripts for the frontend
+  - **`src/`**: Source code for React components
+    - **`App.js`**: Main application file
+- **`daemon_Process.cpp`**: C++ file for running daemon process to monitor device status
+- **`daemon_tests.cpp`**: C++ test file for validating daemon process logic
+
+---
+
+## **Best Practices**
+- **Code Quality**: ESLint is enforced for consistent code formatting.
+- **Testing**: Unit and integration tests are implemented using Jest for JavaScript and C++ tests for daemon processes.
+- **Security**: Secure authentication with role-based access control (RBAC) and encryption of sensitive data.
+
+---
+
+## **Contributing**
+Contributions are welcome! Please follow contribution guidelines and submit your PRs with appropriate testing.
+
+---
